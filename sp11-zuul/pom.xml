@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.tedu</groupId>
-	<artifactId>sp11-zuul</artifactId>
+	<artifactId>sp11-zuul</artifactId> 
 	<version>0.0.1-SNAPSHOT</version>
 	<name>sp11-zuul</name>
 	<description>Demo project for Spring Boot</description>
