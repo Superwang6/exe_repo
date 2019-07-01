@@ -6,6 +6,10 @@ spring:
         service-id: config-server
       name: item-service
       profile: dev
+    inetutils:
+      ignored-interfaces:
+      - VM.*
+      
       
 eureka:
   client:

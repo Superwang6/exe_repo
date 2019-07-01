@@ -1,15 +1,28 @@
 spring:
+  application:
+    name: config-server
+  profiles:
+    active: native  
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config
+#        git:
+#          uri: https://github.com/Superwang6/exe_repo
+#          searchPaths: sp-config
+          #username: your-username
+          #password: your-password
+          
   rabbitmq:
     host: 192.168.139.128
     port: 5672
     username: admin
     password: admin
-  application:
-    name: zuul
     
 server:
-  port: 3001
-  
+  port: 6001
+    
 eureka:
   client:
     service-url:
@@ -17,35 +30,9 @@ eureka:
   instance:
     prefer-ip-address: true
     instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
-
-#zuul:
-#  routes:
-#    item-service: /item-service/**
-#    user-service: /user-service/**
-#    order-service: /order-service/**
-
-zuul:
-  retryable: true
-  
-ribbon:
-  ConnectTimeout: 1000
-  ReadTimeout: 1000
-  MaxAutoRetriesNextServer: 1
-  MaxAutoRetries: 1
-  
+      
 management:
   endpoints:
     web:
       exposure:
-        include: hystrix.stream
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+        include: bus-refresh

@@ -6,6 +6,9 @@ spring:
         service-id: config-server
       name: zuul
       profile: dev
+    inetutils:
+      ignored-interfaces:
+      - VM.*
       
 eureka:
   client:
